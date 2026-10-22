@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Teamora – Manager performance platform (demo)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="shell">
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="nav">
+    <a class="logo" href="#top"><span class="mark">◐</span> teamora</a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <nav id="menu">
+      <a href="#product">Product</a><a href="#impact">Impact</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+      <button class="btn ghost" data-modal="login">Log in</button>
+      <button class="btn green" data-modal="demo">Book a demo</button>
+    </nav>
+  </header>
+
+  <!-- ===== HERO HEADING ===== -->
+  <section class="hero" id="top">
+    <span class="eyebrow">Improve Manager Productivity</span>
+    <h1>Empowered Managers,<br>Higher Performing Teams</h1>
+    <p>Make managers your highest point of leverage with productive meetings, clear expectations, and accountability.</p>
+    <small>Fictional product. All data on this page is sample data.</small>
+  </section>
+
+  <!-- ===== BENTO: 4 interactive cards ===== -->
+  <section class="bento" id="product">
+
+    <!-- OKRs & Goals -->
+    <article class="card goals">
+      <div class="panel">
+        <h3>Goals</h3>
+        <div class="objective"><span class="target">◎</span><b id="objText">Increase International Revenue</b><span class="avatar a0">AM</span></div>
+        <ul id="krList" class="kr-list"></ul>
+        <form id="krForm" class="kr-form" novalidate>
+          <input id="krInput" placeholder="Add a key result" aria-label="New key result">
+          <button class="btn green sm">Add</button>
+        </form>
+        <small id="krMsg" role="alert"></small>
+      </div>
+      <h2 class="accent">OKRs &amp; Goals</h2>
+      <p>Focus individuals and teams on your company's top priorities, tracking progress and risks each step of the way.</p>
+      <small>Tip: click a key result to update its progress.</small>
+    </article>
+
+    <!-- Analytics -->
+    <article class="card analytics">
+      <div class="text"><h2>Analytics</h2>
+        <p>Seamlessly connect performance review cycle results into compensation decisions, creating fair and equitable pay outcomes.</p></div>
+      <div class="panel chart-panel">
+        <b>Results</b>
+        <label class="group">Group by:
+          <select id="groupBy"><option>Department</option><option>Quarter</option><option>Level</option></select></label>
+        <div class="bars" id="bars"></div>
+      </div>
+    </article>
+
+    <!-- Grow -->
+    <article class="card grow">
+      <h2>Grow</h2>
+      <p>Increase growth and engagement with dynamic employee development tools.</p>
+      <div class="profile">
+        <div class="who">
+          <div class="photo" id="photo">BH</div>
+          <div><b>Bethany Hale</b><br><small>People Operations</small>
+            <div class="row"><label class="up">📷 Photo<input type="file" accept="image/*" hidden id="photoUp"></label><button class="up" id="photoRm">Remove</button></div></div>
+        </div>
+        <div class="tabs" id="tabs" role="tablist"></div>
+        <textarea id="note" aria-label="Development notes"></textarea>
+        <small id="noteMsg" role="status"></small>
+      </div>
+    </article>
+
+    <!-- Reduced turnover -->
+    <article class="card turnover">
+      <h2>Reduced Turnover <span id="tPct">27%</span></h2>
+      <div class="donut">
+        <svg viewBox="0 0 120 120" aria-label="Turnover reduced by 27 percent">
+          <circle cx="60" cy="60" r="48" class="ring-bg"/>
+          <circle cx="60" cy="60" r="48" class="ring" id="ring" transform="rotate(-90 60 60)"/>
+        </svg>
+        <b id="donutText">0%</b>
+      </div>
+      <small class="legend">● Turnover (sample data)</small>
+    </article>
+  </section>
+
+  <!-- ===== IMPACT CALCULATOR ===== -->
+  <section class="impact" id="impact">
+    <h2>Estimate your impact</h2>
+    <p>Illustrative calculator. Not a promise of results.</p>
+    <div class="calc">
+      <label>Employees <input id="cEmp" type="number" min="1" value="200"></label>
+      <label>Current yearly turnover (%) <input id="cRate" type="number" min="0" max="100" value="18"></label>
+      <label>Cost to replace one person ($) <input id="cCost" type="number" min="0" value="4000"></label>
+      <div class="result"><small>With a 27% lower turnover (demo figure)</small><b id="cSave">$0</b><span id="cLeavers"></span></div>
+    </div>
+    <small id="calcMsg" role="alert"></small>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="pricing" id="pricing">
+    <h2>Pricing</h2><p>Illustrative project data, not real pricing.</p>
+    <div class="three" id="plans"></div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq">
+    <h2>Questions</h2>
+    <input id="faqSearch" placeholder="Search questions" aria-label="Search questions">
+    <div id="faqList"></div>
+  </section>
+
+  <footer><b>teamora</b><span>Fictional brand for a demonstration project · hello@teamora.example</span>
+    <span><button class="link" data-modal="privacy">Privacy</button> · <button class="link" data-modal="terms">Terms</button></span></footer>
+</div>
+
+<dialog id="dlg"><div id="dlgBody"></div></dialog>
+<div id="toast" role="status"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
